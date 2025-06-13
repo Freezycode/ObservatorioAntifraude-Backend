@@ -1,0 +1,333 @@
+{
+	"info": {
+		"_postman_id": "f03565ac-d783-4fd3-a6ff-7fc97b465fa8",
+		"name": "Observador-antifraudes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43991464"
+	},
+	"item": [
+		{
+			"name": "usuarios",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "enviar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"anonimo\": false,\r\n    \"nome\": \"Junior Oliveira\",\r\n    \"cpf\": \"12345672207\",\r\n    \"email\": \"Junior@email.com\",\r\n    \"telefone\": \"61885544522\",\r\n    \"cep\": \"70000-112\",\r\n    \"cidade\": \"Brasília\",\r\n    \"estado\": \"DF\",\r\n    \"ativo\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"anonimo\": false,\r\n    \"nome\": \"Mateus Vinicius\",\r\n    \"cpf\": \"12345678909\",\r\n    \"email\": \"mateus2@test.com\",\r\n    \"telefone\": \"61999999998\",\r\n    \"cep\": \"70000-000\",\r\n    \"cidade\": \"Goiania\",\r\n    \"estado\": \"GO\",\r\n    \"ativo\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleta-usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "relatos",
+			"item": [
+				{
+					"name": "relatos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cadastro-relatos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cadastro-relatos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "relatos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipoRelato\": \"Roubo de Conta\",\r\n    \"dataOcorrida\": \"2025-06-01\",\r\n    \"horario\": \"14:30:00\",\r\n    \"sistemaRelacionado\": \"RADAR\",\r\n    \"consentimentoResponsabilidade\": true,\r\n    \"aceiteTermos\": true,\r\n    \"foiVitima\": true,\r\n    \"outrasPessoasVitimas\": true,\r\n    \"tomouCiencia\": \"Email\",\r\n    \"descricaoOcorrido\": \"Recebi um email falso do RADAR.\",\r\n    \"usuario\": { \"id\": 1}\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cadastro-relatos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cadastro-relatos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "outros-relatos",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipoRelato\": \"Roubo de Conta\",\r\n    \"dataOcorrida\": \"2025-06-01\",\r\n    \"horario\": \"14:30:00\",\r\n    \"sistemaRelacionado\": \"RADAR\",\r\n    \"consentimentoResponsabilidade\": true,\r\n    \"aceiteTermos\": true,\r\n    \"foiVitima\": true,\r\n    \"outrasPessoasVitimas\": true,\r\n    \"quantidadeOutrasPessoas\": 2,\r\n    \"tomouCiencia\": \"Email\",\r\n    \"descricaoOcorrido\": \"Mudaram a senha da minha conta me ajude.\",\r\n    \"usuario\": { \"id\": 2 }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "PUT http://localhost:8080/cadastro-relatos/2",
+							"protocol": "PUT http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cadastro-relatos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleta-relato",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cadastro-relatos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cadastro-relatos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "status-detalhes",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "status-relatos",
+			"item": [
+				{
+					"name": "status-relato",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"statusRelato\": \"Em análise\",\r\n    \"cadastroRelato\": { \"id\": 1 }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/status-relato",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"status-relato"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status-geral-relato",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Codigo-consulta",
+			"item": [
+				{
+					"name": "busca-por-codigo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cadastro-relatos/buscar?codigoRelato=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cadastro-relatos",
+								"buscar"
+							],
+							"query": [
+								{
+									"key": "codigoRelato",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status-do-analise",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/status-relato/analise",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"status-relato",
+								"analise"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
