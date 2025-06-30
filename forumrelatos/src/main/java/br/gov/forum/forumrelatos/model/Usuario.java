@@ -12,7 +12,7 @@ import java.util.List;
 @Table(name = "usuario", schema = "public")
 @Getter
 @Setter
-@ToString(exclude = "cadastroRelatos") // adicionei para corrigir um erro de acessar a lista antes de fechar a sessão
+@ToString(exclude = "cadastroRelatos") 
 public class Usuario {
 
     @Id
@@ -50,15 +50,10 @@ public class Usuario {
     @Column
     private Boolean ativo;
 
-    /**
-     * Relacionamento com a tabela cadastro relato usando cascade para
-     * caso o usuário seja deletado, os relatos também serão.
-     * orphanRemoval garante que os relatos sejam removidos do banco.
-     */
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @com.fasterxml.jackson.annotation.JsonIgnore
     private List<CadastroRelato> cadastroRelatos;
 
-    /**Metodo para passar a data e a hora altomaticamnte caso o json nap envie*/
     @PrePersist
     public void prePersist() {
         if (dataRegistro == null) {

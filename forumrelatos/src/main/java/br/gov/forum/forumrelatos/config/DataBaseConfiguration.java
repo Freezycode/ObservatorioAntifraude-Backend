@@ -41,12 +41,12 @@ public class DataBaseConfiguration {
         config.setDriverClassName(driver);
         config.setJdbcUrl(url);
 
-        config.setMaximumPoolSize(10); /**implementando o maximo de conexões liberadas */
-        config.setMinimumIdle(1); /** tamanho inicial do pool*/
+        config.setMaximumPoolSize(10);
+        config.setMinimumIdle(1); 
         config.setPoolName("Forum-db-pool");
-        config.setMaxLifetime(600000); /**600 mil ms 10 minutos de conexão*/
-        config.setConnectionTimeout(100000); /**timeout para poder conseguir uma coneão*/
-        config.setConnectionTestQuery("select 1"); /** querry de teste*/
+        config.setMaxLifetime(600000); 
+        config.setConnectionTimeout(100000); 
+        config.setConnectionTestQuery("select 1"); 
 
         return new HikariDataSource(config);
     }

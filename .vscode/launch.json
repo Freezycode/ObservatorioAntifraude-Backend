@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<forumrelatos>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.gov.forum.forumrelatos.Application",
+            "projectName": "forumrelatos",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

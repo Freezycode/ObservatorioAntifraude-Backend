@@ -7,7 +7,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-
 @Entity
 @Table(name = "cadastro_relato")
 @Data
@@ -18,9 +17,6 @@ public class CadastroRelato {
     @Column(name = "id_cadastro_relato")
     private Long id;
 
-    /** (nullable = false) para nao ter valor nulos e obrigatorios no banco e usei unique para garantir que algumas
-     * coluna tenha um  valores unicos
-     * */
     @Column(name = "tipo_relato", nullable = false, columnDefinition = "TEXT")
     private String tipoRelato;
 
@@ -55,7 +51,7 @@ public class CadastroRelato {
     private Boolean outrasPessoasVitimas;
 
     @Column(name = "tomou_ciencia", nullable = false, length = 50)
-    private String tomouCiencia = "não informado"; // assim como coloquei no banco deixei um valor preenchido por segurança
+    private String tomouCiencia = "não informado"; 
 
     @Column(name = "descricao_ocorrido", nullable = false, columnDefinition = "TEXT")
     private String descricaoOcorrido;
@@ -63,13 +59,10 @@ public class CadastroRelato {
     @Column(name = "data_registro")
     private LocalDateTime dataRegistro;
 
-    /**Relacionamento com a tabela usuario*/
-
     @ManyToOne
     @JoinColumn(name = "id_usuario", nullable = false)
     private Usuario usuario;
 
-    /**Metodo para passar a data e a hora altomaticamnte caso o json nao envie*/
     @PrePersist
     public void prePersist() {
         if (dataRegistro == null) {

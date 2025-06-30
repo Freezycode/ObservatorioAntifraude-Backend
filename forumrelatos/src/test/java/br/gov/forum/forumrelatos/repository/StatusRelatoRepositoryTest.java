@@ -25,7 +25,7 @@ class StatusRelatoRepositoryTest {
 
         StatusRelato statusRelato = new StatusRelato();
         statusRelato.setCadastroRelato(cadastroRelato);
-        statusRelato.setStatus("Em andamento");
+        statusRelato.setStatusRelato("Em andamento");
         statusRelato.setDataRegistro(LocalDateTime.now());
 
         StatusRelato salvo = statusRelatoRepository.save(statusRelato);

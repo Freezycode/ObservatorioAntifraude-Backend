@@ -33,9 +33,6 @@ public class LogAlteracoes {
     @Column(name = "data_acao", nullable = false)
     private LocalDateTime dataAcao;
 
-    /**
-     * Relacionamento com a Tabela de usuario
-     * */
     @ManyToOne
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;

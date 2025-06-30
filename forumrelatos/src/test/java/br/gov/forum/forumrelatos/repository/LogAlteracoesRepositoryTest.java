@@ -25,10 +25,10 @@ public class LogAlteracoesRepositoryTest {
 
         LogAlteracoes log = new LogAlteracoes();
         log.setTabelaAfetada("cadastro_relato");
-        log.setRegistroId(2L); //*Aqui e id que irei alterar para teste */
+        log.setRegistroId(2L); 
         log.setAcao("UPDATE");
         log.setDadosAnteriores("{\"status_relato\": \"Em análise\"}");
-        log.setDadosNovos("{\"status_relato\": \"Aprovado\"}");//*Aqui atualizei os status do relato para aprovado */
+        log.setDadosNovos("{\"status_relato\": \"Aprovado\"}");
         log.setUsuario(usuario);
         log.setDataAcao(LocalDateTime.now());
 

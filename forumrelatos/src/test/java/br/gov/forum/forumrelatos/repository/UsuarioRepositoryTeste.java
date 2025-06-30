@@ -1,7 +1,6 @@
 package br.gov.forum.forumrelatos.repository;
 
 import br.gov.forum.forumrelatos.model.Usuario;
-import jakarta.persistence.Table;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
