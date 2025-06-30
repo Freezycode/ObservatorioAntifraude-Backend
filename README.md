@@ -58,7 +58,7 @@ git clone https://github.com/Freezycode/ObservatorioAntifraude-Backend
 7. A aplicação estará disponível em:
    `http://localhost:8080/`
 
-# Endpoints Disponíveis na Coleção
+# Endpoints
 
 * **Usuário:**
 
