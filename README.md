@@ -1,60 +1,78 @@
-blz vou testar ai tambem organiza a minha readme para deixar atrativa ne e organizada
+# Definição do Projeto
 
-Definição do projeto:
+**Observador Antifraude** – Cadastro de relatos sobre fraudes cibernéticas.
 
-Observador Antifraude - Cadastro de relatos sobre fraudes cibernéticas
+---
 
-Problema:
+# Problema
 
 Fraudes têm ocorrido por falsificação das interfaces e comunicações que imitam os sistemas do SERPRO, levando ao engano de muitos usuários e afetando a credibilidade e confiança nos serviços da instituição.
 
-Solução:
+---
 
-Uma solução viável seria um sistema que permita que qualquer pessoa física (seja vítima ou não) consiga reportar seu relato de maneira eficaz e segura, os quais serão feitos via formulário contendo funcionalidade devolutiva ao usuário.
+# Solução
 
-Como executar o projeto:
-Clone o repositório com o comando:
+Uma solução viável seria um sistema que permita que qualquer pessoa física (seja vítima ou não) consiga reportar seu relato de maneira eficaz e segura, via formulário contendo funcionalidade devolutiva ao usuário.
+
+---
+
+# Como Executar o Projeto
+
+1. Clone o repositório:
+
+```bash
 git clone https://github.com/Freezycode/ObservatorioAntifraude-Backend
+```
 
-Abra a pasta do projeto no Visual Studio Code, IntelliJ, Spring Tools Suite ou outra IDE de sua preferência.
+2. Abra a pasta do projeto na sua IDE preferida (Visual Studio Code, IntelliJ, Spring Tools Suite, etc).
 
-A IDE fará o download automático das dependências via Maven.
+3. A IDE fará o download automático das dependências via Maven.
 
-Caso isso não ocorra, execute no terminal do projeto o comando:
-./mvnw clean install
+   * Caso não ocorra automaticamente, execute no terminal do projeto:
 
-Localize o arquivo application.properties para configurar a conexão com o banco de dados (URL, usuário, senha e nome do banco).
+   ```bash
+   ./mvnw clean install
+   ```
 
-Execute o script de criação do banco de dados que está no caminho:
-src/main/resources/forum_relatos.sql
+4. Configure a conexão com o banco de dados PostgreSQL:
 
-Execute esse script no PostgreSQL para criar as tabelas necessárias.
+   * Abra o arquivo `application.properties`.
+   * Configure URL, usuário, senha e nome do banco.
 
-Com o banco de dados criado e configurado, execute a aplicação pelo terminal com o comando:
-./mvnw spring-boot:run
+5. Execute o script SQL para criação das tabelas:
 
-Ou pelo botão Run da sua IDE.
+   * Localize o arquivo:
+     `src/main/resources/forum_relatos.sql`
+   * Execute esse script no PostgreSQL para criar as tabelas necessárias.
 
-A aplicação estará disponível no endereço:
-http://localhost:8080/
+6. Execute a aplicação:
 
-Para testar os endpoints, utilize o Postman:
+   * Pelo terminal:
 
-Abra o Postman.
+   ```bash
+   ./mvnw spring-boot:run
+   ```
 
-Clique em Importar.
+   * Ou pelo botão **Run** da sua IDE.
 
-Navegue até a pasta:
-src/postman/Observatorio-antifraudes.postman_collection.json
+7. A aplicação estará disponível em:
+   `http://localhost:8080/`
 
-Importe o arquivo de coleção.
+# Endpoints Disponíveis na Coleção
 
-A coleção contém os seguintes endpoints organizados para testes:
+* **Usuário:**
 
-Usuário: (GET, POST, PUT, DELETE)
+  * POST
 
-Relatos: (GET, POST, PUT, DELETE)
+* **Cadastro do Relato:**
 
-Status do Relato: (GET, POST)
+  * POST
 
-Código da Consulta: (GET)
+* **Status do Relato:**
+
+  * GET
+
+* **Código da Consulta:**
+
+  * GET
+
